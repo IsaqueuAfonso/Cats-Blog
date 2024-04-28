@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: "Mulish", sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+:root {
+  font-size: 62.5%;
+
+  --background-hue: 195;
+  --color-text-all: 240;
+
+  --backgroun-one: hsl(var(--background-hue), 91%, 25%);
+  --background-two: hsl(var(--background-hue), 46%, 40%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-title: hsl(var(--color-text-all), 6%, 13%);
+  --color-text: hsl(var(--color-text-all), 5%, 7%);
+}
+
+/* header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 7.2rem;
+  background-color: var(--backgroun-one);
+}
+header .container-header {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 120rem;
+  width: 100%;
+
+  padding: 1.5rem 2.8rem;
+  margin-inline: auto;
+}
+
+header .input-wrapper {
+  width: 100%;
+}
+header .input-wrapper input {
+  width: 100%;
+  display: block;
+  height: 4rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0;
+  border-radius: 4px;
+  outline: none;
+  padding: 1.2rem 0 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  font-weight: 600;
+}
+.input-wrapper input::placeholder {
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1.6rem;
+  padding: 1.2rem 0 1.2rem 1.4rem;
+}
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+header .logo {
+  min-width: 4rem;
+  min-height: 4rem;
+}
+header .logo-two {
+  min-width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+/* Main - Aside */
+
+.container-main-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main */
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .img-cat {
+  max-width: 80.3rem;
+  width: 100%;
+  height: clamp(21.9rem, 20vw + 20.1rem, 40.5rem);
+  object-fit: cover;
+  margin: auto;
+}
+
+main .head-like {
+  width: 34.2rem;
+  margin: 3.1rem 0 3.1rem 2.2rem;
+}
+main .head-like h1 {
+  font-size: 2.4rem;
+  color: var(--color-title);
+}
+
+main .container-like {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+main .container-like .icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--color-white);
+}
+main .container-like div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
+  background-color: #065e7c;
+}
+main p {
+  font-size: 1.6rem;
+  padding-inline: 2.4rem;
+  margin-bottom: 3.4rem;
+  color: var(--color-text);
+}
+
+/* aside */
+
+aside {
+  padding-inline: 2.3rem;
+  margin-bottom: 3.9rem;
+}
+aside h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--color-title);
+}
+
+aside .container-artigos {
+  margin-top: 3.2rem;
+  height: 8.4rem;
+}
+.container-artigos a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+.container-artigos a img {
+  min-width: 15.1rem;
+  max-height: 8.4rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  margin-right: 1.6rem;
+}
+aside .container-artigos .container-text h3 {
+  font-size: 1.8rem;
+
+  color: var(--color-title);
+}
+aside .container-artigos .container-text p {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  color: var(--color-title);
+}
+
+/* footer */
+
+footer {
+  height: 6.4rem;
+  background-color: var(--background-two);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+/* Animation */
+
+header,
+footer {
+  animation: trasition 0.2s;
+}
+header {
+  --startY: -100%;
+}
+footer {
+  --startY: 100%;
+}
+
+@keyframes trasition {
+  from {
+    transform: translateY(var(--startY));
+  }
+}
+.container-artigos a {
+  --delay: 0.4s;
+  animation: delay 0.4s var(--delay) backwards;
+}
+
+@keyframes delay {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* @Media */
+@media (min-width: 1440px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "a a a"
+      "b b b"
+      "c c c";
+  }
+
+  header {
+    grid-area: a;
+  }
+  .container-main-aside {
+    grid-area: b;
+    display: flex;
+    flex-direction: row;
+  }
+  footer {
+    grid-area: c;
+  }
+}
